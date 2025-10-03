@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Israeli Snacks Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::before {
+            content: "🇮🇱";
+            position: absolute;
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 40px;
+        }
+        
+        .header::after {
+            content: "🇰🇷";
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 40px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+        
+        .intro {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+            color: #495057;
+            font-size: 1.1em;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .snack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .snack-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e6e9f0 100%);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .snack-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .snack-image-container {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            background: white;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .snack-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+        
+        .snack-name {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .hebrew-name {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            font-weight: normal;
+        }
+        
+        .snack-description {
+            color: #34495e;
+            margin-bottom: 15px;
+            font-size: 1em;
+            line-height: 1.5;
+            text-align: center;
+            flex-grow: 1;
+        }
+        
+        .allergens-section {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .allergens-title {
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        
+        .allergens-content {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .contains {
+            margin-bottom: 5px;
+        }
+        
+        .may-contain {
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        .photo-note {
+            text-align: center;
+            padding: 20px;
+            background: #fff3cd;
+            color: #856404;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .header::before,
+            .header::after {
+                display: none;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .snack-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .snack-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Israeli Snacks Collection</h1>
+            <div class="subtitle">From Israel to Korea with Love</div>
+        </div>
+        
+        <div class="intro">
+            Welcome! These are popular Israeli snacks that represent the unique flavors of Israel. 
+            Please check the allergen information carefully before trying each snack. Enjoy your taste of Israel!
+        </div>
+        
+        <div class="content">
+
+            
+            <div class="snack-grid">
+                
+                <!-- Bamba Original -->
+                <div class="snack-card">
+                    <div class="snack-image-container">
+                        <img src="bamba-original.jpg" alt="Bamba Original" class="snack-image">
+                    </div>
+                    <div class="snack-name">
+                        🥜 Bamba
+                        <div class="hebrew-name">(במבה)</div>
+                    </div>
+                    <div class="snack-description">
+                        Israel's most beloved peanut puff snack. Light, crunchy, and melts in your mouth. This is the #1 snack in Israel!
+                    </div>
+                    <div class="allergens-section">
+                        <div class="allergens-title">⚠️ Allergens</div>
+                        <div class="allergens-content">
+                            <div class="contains"><strong>Contains:</strong> Peanuts</div>
+                            <div class="may-contain"><strong>May contain:</strong> Soy</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Strawberry Bamba -->
+                <div class="snack-card">
+                    <div class="snack-image-container">
+                        <img src="bamba-strawberry.jpg" alt="Strawberry Bamba" class="snack-image">
+                    </div>
+                    <div class="snack-name">
+                        🍓 Strawberry Bamba
+                        <div class="hebrew-name">(במבה תות)</div>
+                    </div>
+                    <div class="snack-description">
+                        Sweet strawberry-flavored version of classic Bamba. A special treat popular at celebrations and parties.
+                    </div>
+                    <div class="allergens-section">
+                        <div class="allergens-title">⚠️ Allergens</div>
+                        <div class="allergens-content">
+                            <div class="contains"><strong>Contains:</strong> Soy</div>
+                            <div class="may-contain"><strong>May contain:</strong> Peanuts</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bamba with Marshmallow -->
+                <div class="snack-card">
+                    <div class="snack-image-container">
+                        <img src="bamba-marshmallow.jpg" alt="Bamba Marshmallow" class="snack-image">
+                    </div>
+                    <div class="snack-name">
+                        🔥 Bamba Marshmallow
+                        <div class="hebrew-name">(במבה מרשמלו)</div>
+                    </div>
+                    <div class="snack-description">
+                        Special Bamba filled with marshmallow cream, combining the classic peanut taste with sweet marshmallow.
+                    </div>
+                    <div class="allergens-section">
+                        <div class="allergens-title">⚠️ Allergens</div>
+                        <div class="allergens-content">
+                            <div class="contains"><strong>Contains:</strong> Peanuts and Soy</div>
+                            <div class="may-contain"><strong>May contain:</strong> Tree nuts, Sesame, Gluten</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bissli Falafel -->
+                <div class="snack-card">
+                    <div class="snack-image-container">
+                        <img src="bissli-falafel.jpg" alt="Bissli Falafel" class="snack-image">
+                    </div>
+                    <div class="snack-name">
+                        🥙 Bissli Falafel
+                        <div class="hebrew-name">(ביסלי פלאפל)</div>
+                    </div>
+                    <div class="snack-description">
+                        Crunchy wheat snack with authentic falafel flavor. Experience the taste of Israeli street food in a snack!
+                    </div>
+                    <div class="allergens-section">
+                        <div class="allergens-title">⚠️ Allergens</div>
+                        <div class="allergens-content">
+                            <div class="contains"><strong>Contains:</strong> Wheat gluten</div>
+                            <div class="may-contain"><strong>May contain:</strong> Soy</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bissli BBQ -->
+                <div class="snack-card">
+                    <div class="snack-image-container">
+                        <img src="bissli-bbq.jpg" alt="Bissli BBQ" class="snack-image">
+                    </div>
+                    <div class="snack-name">
+                        🍖 Bissli BBQ
+                        <div class="hebrew-name">(ביסלי ברביקיו)</div>
+                    </div>
+                    <div class="snack-description">
+                        Crunchy wheat snack with smoky barbecue flavor. Loved by kids and adults alike!
+                    </div>
+                    <div class="allergens-section">
+                        <div class="allergens-title">⚠️ Allergens</div>
+                        <div class="allergens-content">
+                            <div class="contains"><strong>Contains:</strong> Wheat gluten and Soy</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Click Red -->
+                <div class="snack-card">
+                    <div class="snack-image-container">
+                        <img src="click-red.jpg" alt="Click Biscuit Red" class="snack-image">
+                    </div>
+                    <div class="snack-name">
+                        🍫 Click Biscuit (Red Bag)
+                        <div class="hebrew-name">(קליק אדום)</div>
+                    </div>
+                    <div class="snack-description">
+                        Crispy chocolate cereal balls coated with milk chocolate. A beloved Israeli chocolate snack.
+                    </div>
+                    <div class="allergens-section">
+                        <div class="allergens-title">⚠️ Allergens</div>
+                        <div class="allergens-content">
+                            <div class="contains"><strong>Contains:</strong> Milk, Wheat gluten, Soy</div>
+                            <div class="may-contain"><strong>May contain:</strong> Sesame, Hazelnuts, Pecans, Cashews, Coconut, Almonds, Peanuts</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Click Brown -->
+                <div class="snack-card">
+                    <div class="snack-image-container">
+                        <img src="click-brown.jpg" alt="Click Chocolate Balls" class="snack-image">
+                    </div>
+                    <div class="snack-name">
+                        🍫 Click Chocolate Balls
+                        <div class="hebrew-name">(קליק כדורים)</div>
+                    </div>
+                    <div class="snack-description">
+                        Crispy chocolate balls with white and dark chocolate coating. Perfect for chocolate lovers!
+                    </div>
+                    <div class="allergens-section">
+                        <div class="allergens-title">⚠️ Allergens</div>
+                        <div class="allergens-content">
+                            <div class="contains"><strong>Contains:</strong> Milk, Wheat gluten</div>
+                            <div class="may-contain"><strong>May contain:</strong> Sesame, Hazelnuts, Pecans, Cashews, Coconut, Almonds, Peanuts, Soy</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Blondie -->
+                <div class="snack-card">
+                    <div class="snack-image-container">
+                        <img src="blondie.jpg" alt="Blondie White Chocolate" class="snack-image">
+                    </div>
+                    <div class="snack-name">
+                        🍫 Blondie
+                        <div class="hebrew-name">(בלונדי)</div>
+                    </div>
+                    <div class="snack-description">
+                        Premium white chocolate bar with hazelnuts. Sweet and crunchy in every bite.
+                    </div>
+                    <div class="allergens-section">
+                        <div class="allergens-title">⚠️ Allergens</div>
+                        <div class="allergens-content">
+                            <div class="contains"><strong>Contains:</strong> Milk, Almonds, Hazelnuts, Soy</div>
+                            <div class="may-contain"><strong>May contain:</strong> Gluten (wheat, barley), Peanuts, Pecans, Eggs, Sesame</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Coffee Chocolate -->
+                <div class="snack-card">
+                    <div class="snack-image-container">
+                        <img src="coffee-chocolate.jpg" alt="Coffee Filled Chocolate" class="snack-image">
+                    </div>
+                    <div class="snack-name">
+                        ☕ Coffee Filled Chocolate
+                        <div class="hebrew-name">(שוקולד במילוי קפה)</div>
+                    </div>
+                    <div class="snack-description">
+                        Premium milk chocolate filled with rich instant coffee cream. Perfect combination for coffee and chocolate lovers.
+                    </div>
+                    <div class="allergens-section">
+                        <div class="allergens-title">⚠️ Allergens</div>
+                        <div class="allergens-content">
+                            <div class="contains"><strong>Contains:</strong> Milk, Almonds, Hazelnuts, Soy</div>
+                            <div class="may-contain"><strong>May contain:</strong> Gluten (wheat, barley), Peanuts, Pecans, Eggs, Sesame</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Halva -->
+                <div class="snack-card">
+                    <div class="snack-image-container">
+                        <img src="halva.jpg" alt="Halva Variety" class="snack-image">
+                    </div>
+                    <div class="snack-name">
+                        🍯 Halva
+                        <div class="hebrew-name">(חלווה)</div>
+                    </div>
+                    <div class="snack-description">
+                        Traditional Middle Eastern sweet made from sesame tahini with various nuts. Sweet, crumbly, and melts in your mouth.
+                    </div>
+                    <div class="allergens-section">
+                        <div class="allergens-title">⚠️ Allergens</div>
+                        <div class="allergens-content">
+                            <div class="contains"><strong>Contains:</strong> Sesame, Walnuts, Cashews, Hazelnuts, Pistachios, Soy</div>
+                            <div class="may-contain"><strong>May contain:</strong> Walnuts, Pistachios, Almonds, Cashews, Coconut, Hazelnuts</div>
+                            <div class="may-contain"><strong>Note:</strong> May contain hard sugar pieces</div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
